@@ -26,7 +26,6 @@ Partial Class frmEditGoose
         Label2 = New Label()
         Label3 = New Label()
         Label4 = New Label()
-        txtName = New TextBox()
         txtAge = New TextBox()
         btnSave = New Button()
         btnCancel = New Button()
@@ -36,13 +35,20 @@ Partial Class frmEditGoose
         cboColor = New ComboBox()
         Label5 = New Label()
         txtId = New TextBox()
+        txtName = New TextBox()
+        Label6 = New Label()
+        txtPhone = New MaskedTextBox()
+        lblName = New Label()
+        lblAge = New Label()
+        lblColor = New Label()
+        lblPhone = New Label()
         rdoGender.SuspendLayout()
         SuspendLayout()
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(12, 92)
+        Label1.Location = New Point(12, 38)
         Label1.Name = "Label1"
         Label1.Size = New Size(39, 15)
         Label1.TabIndex = 0
@@ -51,7 +57,7 @@ Partial Class frmEditGoose
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(12, 121)
+        Label2.Location = New Point(12, 67)
         Label2.Name = "Label2"
         Label2.Size = New Size(28, 15)
         Label2.TabIndex = 1
@@ -60,7 +66,7 @@ Partial Class frmEditGoose
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(12, 150)
+        Label3.Location = New Point(12, 96)
         Label3.Name = "Label3"
         Label3.Size = New Size(36, 15)
         Label3.TabIndex = 2
@@ -69,29 +75,24 @@ Partial Class frmEditGoose
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(12, 188)
+        Label4.Location = New Point(12, 146)
         Label4.Name = "Label4"
         Label4.Size = New Size(45, 15)
         Label4.TabIndex = 3
         Label4.Text = "Gender"
         ' 
-        ' txtName
-        ' 
-        txtName.Location = New Point(77, 89)
-        txtName.Name = "txtName"
-        txtName.Size = New Size(166, 23)
-        txtName.TabIndex = 4
-        ' 
         ' txtAge
         ' 
-        txtAge.Location = New Point(77, 118)
+        txtAge.Location = New Point(77, 64)
+        txtAge.MaxLength = 2
         txtAge.Name = "txtAge"
-        txtAge.Size = New Size(166, 23)
+        txtAge.Size = New Size(184, 23)
         txtAge.TabIndex = 5
         ' 
         ' btnSave
         ' 
         btnSave.DialogResult = DialogResult.OK
+        btnSave.Enabled = False
         btnSave.Location = New Point(50, 277)
         btnSave.Name = "btnSave"
         btnSave.Size = New Size(75, 23)
@@ -124,7 +125,7 @@ Partial Class frmEditGoose
         ' rdoMale
         ' 
         rdoMale.AutoSize = True
-        rdoMale.Location = New Point(103, 22)
+        rdoMale.Location = New Point(115, 22)
         rdoMale.Name = "rdoMale"
         rdoMale.Size = New Size(51, 19)
         rdoMale.TabIndex = 11
@@ -135,9 +136,9 @@ Partial Class frmEditGoose
         ' 
         rdoGender.Controls.Add(rdoFemale)
         rdoGender.Controls.Add(rdoMale)
-        rdoGender.Location = New Point(77, 176)
+        rdoGender.Location = New Point(77, 122)
         rdoGender.Name = "rdoGender"
-        rdoGender.Size = New Size(166, 70)
+        rdoGender.Size = New Size(184, 70)
         rdoGender.TabIndex = 12
         rdoGender.TabStop = False
         ' 
@@ -145,15 +146,15 @@ Partial Class frmEditGoose
         ' 
         cboColor.FormattingEnabled = True
         cboColor.Items.AddRange(New Object() {"Red", "Orange", "Yellow", "Green", "Blue", "Indigo", "Violet", "White", "Black"})
-        cboColor.Location = New Point(77, 147)
+        cboColor.Location = New Point(77, 93)
         cboColor.Name = "cboColor"
-        cboColor.Size = New Size(166, 23)
+        cboColor.Size = New Size(184, 23)
         cboColor.TabIndex = 13
         ' 
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(10, 63)
+        Label5.Location = New Point(12, 9)
         Label5.Name = "Label5"
         Label5.Size = New Size(18, 15)
         Label5.TabIndex = 14
@@ -162,16 +163,100 @@ Partial Class frmEditGoose
         ' txtId
         ' 
         txtId.Enabled = False
-        txtId.Location = New Point(77, 60)
+        txtId.Location = New Point(77, 6)
         txtId.Name = "txtId"
-        txtId.Size = New Size(166, 23)
+        txtId.Size = New Size(184, 23)
         txtId.TabIndex = 15
+        ' 
+        ' txtName
+        ' 
+        txtName.Location = New Point(77, 35)
+        txtName.MaxLength = 10
+        txtName.Name = "txtName"
+        txtName.Size = New Size(184, 23)
+        txtName.TabIndex = 16
+        ' 
+        ' Label6
+        ' 
+        Label6.AutoSize = True
+        Label6.Location = New Point(12, 217)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(88, 15)
+        Label6.TabIndex = 17
+        Label6.Text = "Phone Number"
+        ' 
+        ' txtPhone
+        ' 
+        txtPhone.Location = New Point(107, 214)
+        txtPhone.Mask = "(999) 000-0000"
+        txtPhone.Name = "txtPhone"
+        txtPhone.Size = New Size(154, 23)
+        txtPhone.TabIndex = 18
+        ' 
+        ' lblName
+        ' 
+        lblName.AutoSize = True
+        lblName.BackColor = SystemColors.ControlLightLight
+        lblName.Font = New Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point)
+        lblName.ForeColor = Color.Firebrick
+        lblName.Location = New Point(267, 38)
+        lblName.Name = "lblName"
+        lblName.Size = New Size(13, 20)
+        lblName.TabIndex = 19
+        lblName.Text = "!"
+        lblName.Visible = False
+        ' 
+        ' lblAge
+        ' 
+        lblAge.AutoSize = True
+        lblAge.BackColor = SystemColors.ControlLightLight
+        lblAge.Font = New Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point)
+        lblAge.ForeColor = Color.Firebrick
+        lblAge.Location = New Point(267, 67)
+        lblAge.Name = "lblAge"
+        lblAge.Size = New Size(13, 20)
+        lblAge.TabIndex = 20
+        lblAge.Text = "!"
+        lblAge.Visible = False
+        ' 
+        ' lblColor
+        ' 
+        lblColor.AutoSize = True
+        lblColor.BackColor = SystemColors.ControlLightLight
+        lblColor.Font = New Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point)
+        lblColor.ForeColor = Color.Firebrick
+        lblColor.Location = New Point(267, 96)
+        lblColor.Name = "lblColor"
+        lblColor.Size = New Size(13, 20)
+        lblColor.TabIndex = 21
+        lblColor.Text = "!"
+        lblColor.Visible = False
+        ' 
+        ' lblPhone
+        ' 
+        lblPhone.AutoSize = True
+        lblPhone.BackColor = SystemColors.ControlLightLight
+        lblPhone.Font = New Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point)
+        lblPhone.ForeColor = Color.Firebrick
+        lblPhone.Location = New Point(267, 217)
+        lblPhone.Name = "lblPhone"
+        lblPhone.Size = New Size(13, 20)
+        lblPhone.TabIndex = 22
+        lblPhone.Text = "!"
+        lblPhone.Visible = False
         ' 
         ' frmEditGoose
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(255, 312)
+        ClientSize = New Size(314, 312)
+        Controls.Add(lblPhone)
+        Controls.Add(lblColor)
+        Controls.Add(lblAge)
+        Controls.Add(lblName)
+        Controls.Add(txtPhone)
+        Controls.Add(Label6)
+        Controls.Add(txtName)
         Controls.Add(txtId)
         Controls.Add(Label5)
         Controls.Add(cboColor)
@@ -179,7 +264,6 @@ Partial Class frmEditGoose
         Controls.Add(btnCancel)
         Controls.Add(btnSave)
         Controls.Add(txtAge)
-        Controls.Add(txtName)
         Controls.Add(Label4)
         Controls.Add(Label3)
         Controls.Add(Label2)
@@ -196,7 +280,6 @@ Partial Class frmEditGoose
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents txtName As TextBox
     Friend WithEvents txtAge As TextBox
     Friend WithEvents btnSave As Button
     Friend WithEvents btnCancel As Button
@@ -206,4 +289,11 @@ Partial Class frmEditGoose
     Friend WithEvents cboColor As ComboBox
     Friend WithEvents Label5 As Label
     Friend WithEvents txtId As TextBox
+    Friend WithEvents txtName As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents txtPhone As MaskedTextBox
+    Friend WithEvents lblName As Label
+    Friend WithEvents lblAge As Label
+    Friend WithEvents lblColor As Label
+    Friend WithEvents lblPhone As Label
 End Class

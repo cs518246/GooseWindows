@@ -6,6 +6,7 @@ Public Class frmGooseMain
 
     Dim gooseList As New List(Of Goose)
     Dim isFirst As New Boolean
+    'Dim valid As New Validation
 
     Private Const Path As String = "..\..\Geese.xml"
     Private Sub frmGooseMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -62,6 +63,7 @@ Public Class frmGooseMain
         editForm.txtId.Text = editGoose.Id
         editForm.txtName.Text = editGoose.Name
         editForm.txtAge.Text = editGoose.Age
+        editForm.txtPhone.Text = editGoose.Phone
         editForm.cboColor.SelectedIndex = selectedColor
         If editGoose.Gender = "M" Then
             editForm.rdoFemale.Checked = False
@@ -112,6 +114,7 @@ Public Class frmGooseMain
                 goose.Age = xmlIn.ReadElementContentAsDecimal
                 goose.Color = xmlIn.ReadElementContentAsString
                 goose.Gender = xmlIn.ReadElementContentAsString
+                goose.Phone = xmlIn.ReadElementContentAsString
                 'gooseList.Add(goose)
                 lstGeese.Items.Add(goose.Display)
                 If isFirst Then
@@ -140,6 +143,7 @@ Public Class frmGooseMain
             xmlOut.WriteElementString("Age", g.Age)
             xmlOut.WriteElementString("Color", g.Color)
             xmlOut.WriteElementString("Gender", g.Gender)
+            xmlOut.WriteElementString("Phone", g.Phone)
             xmlOut.WriteEndElement()
 
             'lstGeese.Items.Add(g.Display)
