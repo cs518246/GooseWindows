@@ -1,6 +1,9 @@
 ﻿Imports System.IO
 Imports System.Windows.Forms.ComboBox
 Imports System.Xml
+'Add REGEX for Phone Number
+'Add validation and email field
+'Add images
 
 Public Class frmGooseMain
 

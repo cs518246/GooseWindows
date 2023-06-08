@@ -87,7 +87,7 @@ Partial Class frmEditGoose
         txtAge.MaxLength = 2
         txtAge.Name = "txtAge"
         txtAge.Size = New Size(184, 23)
-        txtAge.TabIndex = 5
+        txtAge.TabIndex = 2
         ' 
         ' btnSave
         ' 
@@ -96,7 +96,7 @@ Partial Class frmEditGoose
         btnSave.Location = New Point(50, 277)
         btnSave.Name = "btnSave"
         btnSave.Size = New Size(75, 23)
-        btnSave.TabIndex = 8
+        btnSave.TabIndex = 5
         btnSave.Text = "Save"
         btnSave.UseVisualStyleBackColor = True
         ' 
@@ -106,7 +106,7 @@ Partial Class frmEditGoose
         btnCancel.Location = New Point(156, 277)
         btnCancel.Name = "btnCancel"
         btnCancel.Size = New Size(75, 23)
-        btnCancel.TabIndex = 9
+        btnCancel.TabIndex = 6
         btnCancel.Text = "Cancel"
         btnCancel.UseVisualStyleBackColor = True
         ' 
@@ -149,7 +149,7 @@ Partial Class frmEditGoose
         cboColor.Location = New Point(77, 93)
         cboColor.Name = "cboColor"
         cboColor.Size = New Size(184, 23)
-        cboColor.TabIndex = 13
+        cboColor.TabIndex = 3
         ' 
         ' Label5
         ' 
@@ -174,7 +174,7 @@ Partial Class frmEditGoose
         txtName.MaxLength = 10
         txtName.Name = "txtName"
         txtName.Size = New Size(184, 23)
-        txtName.TabIndex = 16
+        txtName.TabIndex = 1
         ' 
         ' Label6
         ' 
@@ -191,7 +191,7 @@ Partial Class frmEditGoose
         txtPhone.Mask = "(999) 000-0000"
         txtPhone.Name = "txtPhone"
         txtPhone.Size = New Size(154, 23)
-        txtPhone.TabIndex = 18
+        txtPhone.TabIndex = 4
         ' 
         ' lblName
         ' 
