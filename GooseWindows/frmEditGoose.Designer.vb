@@ -42,6 +42,9 @@ Partial Class frmEditGoose
         lblAge = New Label()
         lblColor = New Label()
         lblPhone = New Label()
+        label = New Label()
+        txtEmail = New TextBox()
+        lblEmail = New Label()
         rdoGender.SuspendLayout()
         SuspendLayout()
         ' 
@@ -96,7 +99,7 @@ Partial Class frmEditGoose
         btnSave.Location = New Point(50, 277)
         btnSave.Name = "btnSave"
         btnSave.Size = New Size(75, 23)
-        btnSave.TabIndex = 5
+        btnSave.TabIndex = 6
         btnSave.Text = "Save"
         btnSave.UseVisualStyleBackColor = True
         ' 
@@ -106,7 +109,7 @@ Partial Class frmEditGoose
         btnCancel.Location = New Point(156, 277)
         btnCancel.Name = "btnCancel"
         btnCancel.Size = New Size(75, 23)
-        btnCancel.TabIndex = 6
+        btnCancel.TabIndex = 7
         btnCancel.Text = "Cancel"
         btnCancel.UseVisualStyleBackColor = True
         ' 
@@ -245,11 +248,43 @@ Partial Class frmEditGoose
         lblPhone.Text = "!"
         lblPhone.Visible = False
         ' 
+        ' label
+        ' 
+        label.AutoSize = True
+        label.Location = New Point(12, 248)
+        label.Name = "label"
+        label.Size = New Size(81, 15)
+        label.TabIndex = 23
+        label.Text = "Email Address"
+        ' 
+        ' txtEmail
+        ' 
+        txtEmail.Location = New Point(107, 245)
+        txtEmail.Name = "txtEmail"
+        txtEmail.Size = New Size(154, 23)
+        txtEmail.TabIndex = 5
+        ' 
+        ' lblEmail
+        ' 
+        lblEmail.AutoSize = True
+        lblEmail.BackColor = SystemColors.ControlLightLight
+        lblEmail.Font = New Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point)
+        lblEmail.ForeColor = Color.Firebrick
+        lblEmail.Location = New Point(267, 248)
+        lblEmail.Name = "lblEmail"
+        lblEmail.Size = New Size(13, 20)
+        lblEmail.TabIndex = 24
+        lblEmail.Text = "!"
+        lblEmail.Visible = False
+        ' 
         ' frmEditGoose
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(314, 312)
+        Controls.Add(lblEmail)
+        Controls.Add(txtEmail)
+        Controls.Add(label)
         Controls.Add(lblPhone)
         Controls.Add(lblColor)
         Controls.Add(lblAge)
@@ -296,4 +331,7 @@ Partial Class frmEditGoose
     Friend WithEvents lblAge As Label
     Friend WithEvents lblColor As Label
     Friend WithEvents lblPhone As Label
+    Friend WithEvents label As Label
+    Friend WithEvents txtEmail As TextBox
+    Friend WithEvents lblEmail As Label
 End Class

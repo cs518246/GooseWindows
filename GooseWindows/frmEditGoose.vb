@@ -25,11 +25,14 @@
     End Sub
 
 
-    Private Sub InputValid(sender As Object, e As EventArgs) Handles txtName.TextChanged, txtAge.TextChanged, cboColor.SelectedIndexChanged, txtPhone.TextChanged
+    Private Sub InputValid(sender As Object, e As EventArgs) Handles txtName.TextChanged, txtAge.TextChanged, cboColor.SelectedIndexChanged, txtPhone.TextChanged, txtEmail.TextChanged
+        'Can this be better?
         Dim flagName As Boolean = False
         Dim flagAge As Boolean = False
         Dim flagColor As Boolean = False
         Dim flagPhone As Boolean = False
+        Dim flagEmail As Boolean = False
+
         If valid.IsPresent(txtName, lblName) AndAlso valid.IsString(txtName, lblName) Then
             flagName = True
         Else
@@ -59,7 +62,15 @@
             lblPhone.Visible = True
         End If
 
-        If flagName = False Or flagAge = False Or flagColor = False Or flagPhone = False Then
+        If valid.IsPresent(txtEmail, lblEmail) AndAlso valid.IsValidEmail(txtEmail, lblEmail) Then
+            flagEmail = True
+            lblEmail.Visible = False
+        Else
+            flagEmail = False
+            lblEmail.Visible = True
+        End If
+
+        If flagName = False Or flagAge = False Or flagColor = False Or flagPhone = False Or flagEmail = False Then
             btnSave.Enabled = False
         Else
             btnSave.Enabled = True

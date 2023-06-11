@@ -1,9 +1,8 @@
 ﻿Imports System.IO
 Imports System.Windows.Forms.ComboBox
 Imports System.Xml
-'Add REGEX for Phone Number
-'Add validation and email field
-'Add images
+'Add ability to send emails? https://www.tutorialspoint.com/vb.net/vb.net_send_email.htm
+'Add images https://www.vbtutor.net/vb2017/vb2017_lesson7.html
 
 Public Class frmGooseMain
 

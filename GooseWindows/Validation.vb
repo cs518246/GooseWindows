@@ -1,4 +1,5 @@
-﻿Public Class Validation
+﻿Imports System.Text.RegularExpressions
+Public Class Validation
 
     Public Sub New()
 
@@ -41,6 +42,18 @@
 
     Public Function IsWithinRange(textBox As TextBox, label As Label, minRange As Decimal, maxRange As Decimal) As Boolean
         If textBox.Text >= minRange AndAlso textBox.Text <= maxRange Then
+            label.Visible = False
+            Return True
+        Else
+            label.Visible = True
+            Return False
+        End If
+    End Function
+
+    Public Function IsValidEmail(textBox As TextBox, label As Label)
+        Dim format As String = "^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
+
+        If Regex.IsMatch(textBox.Text, format) Then
             label.Visible = False
             Return True
         Else
