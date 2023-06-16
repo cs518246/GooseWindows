@@ -67,6 +67,7 @@ Public Class frmGooseMain
         editForm.txtAge.Text = editGoose.Age
         editForm.txtPhone.Text = editGoose.Phone
         editForm.cboColor.SelectedIndex = selectedColor
+        editForm.txtEmail.Text = editGoose.Email
         If editGoose.Gender = "M" Then
             editForm.rdoFemale.Checked = False
             editForm.rdoMale.Checked = True
@@ -117,6 +118,7 @@ Public Class frmGooseMain
                 goose.Color = xmlIn.ReadElementContentAsString
                 goose.Gender = xmlIn.ReadElementContentAsString
                 goose.Phone = xmlIn.ReadElementContentAsString
+                goose.Email = xmlIn.ReadElementContentAsString
                 'gooseList.Add(goose)
                 lstGeese.Items.Add(goose.Display)
                 If isFirst Then
@@ -146,6 +148,7 @@ Public Class frmGooseMain
             xmlOut.WriteElementString("Color", g.Color)
             xmlOut.WriteElementString("Gender", g.Gender)
             xmlOut.WriteElementString("Phone", g.Phone)
+            xmlOut.WriteElementString("Email", g.Email)
             xmlOut.WriteEndElement()
 
             'lstGeese.Items.Add(g.Display)

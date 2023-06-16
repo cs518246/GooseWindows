@@ -11,7 +11,7 @@
             gender = "M"
         End If
 
-        goose1 = New Goose(txtId.Text, txtName.Text, txtAge.Text, cboColor.Text, gender, txtPhone.Text)
+        goose1 = New Goose(txtId.Text, txtName.Text, txtAge.Text, cboColor.Text, gender, txtPhone.Text, txtEmail.Text, pctGooseImg.Image)
         Me.Tag = goose1
         Me.Close()
 
@@ -74,6 +74,12 @@
             btnSave.Enabled = False
         Else
             btnSave.Enabled = True
+        End If
+    End Sub
+
+    Private Sub btnView_Click(sender As Object, e As EventArgs) Handles btnView.Click
+        If OFGSelectImage.ShowDialog = DialogResult.OK Then
+            pctGooseImg.Image = Image.FromFile(OFGSelectImage.FileName)
         End If
     End Sub
 End Class

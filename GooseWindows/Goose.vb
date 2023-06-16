@@ -6,6 +6,8 @@
     Private m_Color As String
     Private m_Gender As String
     Private m_Phone As String
+    Private m_Email As String
+    Private m_gooseImg As Image
 
     'Private m_CreatedByUser As String
 
@@ -13,15 +15,33 @@
 
     End Sub
 
-    Public Sub New(id As Decimal, name As String, age As Decimal, color As String, gender As String, phone As String)
+    Public Sub New(id As Decimal, name As String, age As Decimal, color As String, gender As String, phone As String, email As String, gooseImg As Image)
         Me.Id = id
         Me.Name = name
         Me.Age = age
         Me.Color = color
         Me.Gender = gender
         Me.Phone = phone
+        Me.Email = email
+        Me.GooseImage = gooseImg
     End Sub
 
+    Public Property GooseImage As Image
+        Get
+            Return m_gooseImg
+        End Get
+        Set(value As Image)
+            m_gooseImg = value
+        End Set
+    End Property
+    Public Property Email As String
+        Get
+            Return m_Email
+        End Get
+        Set(value As String)
+            m_Email = value
+        End Set
+    End Property
     Public Property Id As Decimal
         Get
             Return m_Id
@@ -77,7 +97,7 @@
     End Property
 
     Public Function Display() As String
-        Dim text As String = Id & " " & Name & " " & Age & " " & Color & " " & Gender & " " & Phone
+        Dim text As String = Id & " " & Name & " " & Age & " " & Color & " " & Gender & " " & Phone & " " & Email
         Return text
     End Function
 End Class
